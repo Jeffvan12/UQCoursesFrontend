@@ -1,0 +1,24 @@
+.ProgramSearchContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    border-bottom: solid black 2px;
+}
+
+
+.ProgramSearchContainer input {
+    width: 70vw;
+    font-size: 40px;
+}
+
+button{
+    border: #8becff 6px solid;
+    background-color: #8becff;
+    font-size: 24px;
+    margin: 0 30px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

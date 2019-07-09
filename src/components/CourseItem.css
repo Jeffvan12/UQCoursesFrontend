@@ -1,0 +1,31 @@
+.CourseContainer{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /*margin: 30px;*/
+    /*text-align: center;*/
+    /*cursor: pointer;*/
+    margin: 5px;
+    padding: 17px;
+    /*background-color: #ff958c;*/
+    /*flex: 1;*/
+    min-height: 60px;
+    max-width: 16vw;
+    /*border-radius: 0.7vh;*/
+    box-shadow: 5px 5px 10px rgba(154,160,185,.6), 20px 15px 40px rgba(166,173,201,.2);
+
+}
+a {
+    /*width: 40vw;*/
+    font-size: 26px;
+    /*text-decoration: none;*/
+    text-decoration-color: #5677a6;
+    color:black;
+}
+
+p {
+    font-size: 20px;
+    margin: 9px;
+}
