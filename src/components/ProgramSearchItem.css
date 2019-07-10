@@ -10,15 +10,22 @@
 .ProgramSearchContainer input {
     width: 70vw;
     font-size: 40px;
+    background-color: black;
+    border: white solid 5px;
+    border-radius: 8px;
+    padding: 7px;
+    color: white;
 }
 
 button{
-    border: #8becff 6px solid;
-    background-color: #8becff;
+    /*border: #8becff 6px solid;*/
+    /*background-color: #8becff;*/
+    background-color: white;
+
     font-size: 24px;
     margin: 0 30px;
     border-radius: 10px;
-    color: white;
+    color: black;
     font-weight: bold;
     cursor: pointer;
 }

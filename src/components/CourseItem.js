@@ -8,13 +8,23 @@ class CourseItem extends React.Component {
         this.state = {
             course : this.props.item,
             colour : this.props.colour,
+            mousein : false,
         }
         this.handleClick = this.handleClick.bind(this)
+        this.handleEnter = this.handleEnter.bind(this)
+        this.handleLeave = this.handleLeave.bind(this)
     }
 
     handleClick(){
         // console.log(this.state.course.url);
         console.log(this.state.course);
+    }
+
+    handleEnter(){
+        this.setState({mousein:true})
+    }
+    handleLeave(){
+        this.setState({mousein:false})
     }
 
     render() {
@@ -25,10 +35,14 @@ class CourseItem extends React.Component {
 
         return (
            // <div onClick={()=>window.open(this.state.course.url, "_blank")} className="CourseContainer">
-            <div className="CourseContainer" style={style}>
+            <div onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="CourseContainer" style={style}>
                 <a href={this.state.course.url} >{this.state.course.title}</a>
-                <p>{"Semesters: " + this.state.course.semesters}</p>
-                <p>{"Prerequisites: " + this.state.course.prereq}</p>
+                {this.state.mousein ? <div><p>{this.state.course.summary}</p></div>:
+                    <div>
+                        <p>{"Semesters: " + this.state.course.semesters}</p>
+                        <p>{"Prerequisites: " + (this.state.course.prereq === "No Value" ? "None" : this.state.course.prereq)}</p>
+                    </div>
+                }
             </div>
         );
     }

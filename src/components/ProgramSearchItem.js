@@ -11,6 +11,7 @@ class ProgramSearchItem extends React.Component {
         }
         this.handleType = this.handleType.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.handleEnter = this.handleEnter.bind(this)
     }
 
     handleType(evt){
@@ -21,10 +22,17 @@ class ProgramSearchItem extends React.Component {
         this.props.handleChange(this.state.inputvalue)
     }
 
+    handleEnter(e){
+        if (e.keyCode === 13){
+            this.props.handleChange(this.state.inputvalue)
+        }
+    }
+
+
     render() {
         return (
             <div className="ProgramSearchContainer">
-                <input  onChange={evt => this.handleType(evt)} placeholder={"Input Program URL"} />
+                <input  onKeyDown={e => this.handleEnter(e)} onChange={evt => this.handleType(evt)} placeholder={"Input Program URL"} />
                 <button onClick={this.handleClick}>Get Courses</button>
             </div>
         );
