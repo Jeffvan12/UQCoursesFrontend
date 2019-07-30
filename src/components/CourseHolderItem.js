@@ -5,7 +5,6 @@ import CourseItem from './CourseItem'
 import './CourseHolderItem.css'
 
 
-
 class CourseHolderItem extends React.Component {
     constructor(props) {
         super(props)
@@ -18,7 +17,7 @@ class CourseHolderItem extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         const programurl = this.props.programurl
-        const url = "http://68.183.236.124:9000/";
+        const url = "http://68.183.236.124:1338/";
         const regex = /^https:\/\/my\.uq\.edu\.au\/programs-courses\/(program_list\.html\?acad_prog=|plan_display\.html\?acad_plan=[A-Z]{6})[0-9]{4}$/g;
 
 
@@ -36,15 +35,17 @@ class CourseHolderItem extends React.Component {
             this.setState({programurlentered: true})
             this.setState({hasloaded: false})
 
-            if (!regex.test(this.props.programurl)){
-                this.setState({courses:<div>
+            if (!regex.test(this.props.programurl)) {
+                this.setState({
+                    courses: <div>
                         <h1>Not a valid Program Course List URL : {programurl}</h1>
                         <h2>Make sure its the program's course list and not the program's detail page</h2>
                         <h2>Should either be like : </h2>
                         <h2>https://my.uq.edu.au/programs-courses/program_list.html?acad_prog=2425</h2>
                         <h2>Or</h2>
                         <h2>https://my.uq.edu.au/programs-courses/plan_display.html?acad_plan=FILMTX2320</h2>
-                    </div>});
+                    </div>
+                });
                 this.setState({hasloaded: true})
                 return
             }
@@ -84,8 +85,8 @@ class CourseHolderItem extends React.Component {
                     this.setState({courses: coursesitems});
 
 
-                } catch{
-                    this.setState({courses:<h1>{res}</h1>})
+                } catch {
+                    this.setState({courses: <h1>{res}</h1>})
                 }
                 this.setState({hasloaded: true})
             })

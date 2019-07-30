@@ -1,31 +1,66 @@
 .ProgramSearchContainer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    margin: 10px 0;
     padding: 20px;
-    border-bottom: solid black 2px;
+    /*border-bottom: solid black 2px;*/
 }
 
 
-.ProgramSearchContainer input {
+.ProgramSearchContainer textarea {
     width: 70vw;
-    font-size: 40px;
-    background-color: black;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.45);
     border: white solid 5px;
     border-radius: 8px;
     padding: 7px;
     color: white;
 }
 
+.CourseContainer div{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
 button{
     /*border: #8becff 6px solid;*/
     /*background-color: #8becff;*/
     background-color: white;
-
     font-size: 24px;
-    margin: 0 30px;
     border-radius: 10px;
     color: black;
     font-weight: bold;
     cursor: pointer;
+}
+@media only screen and (max-width: 700px){
+
+    .ProgramSearchContainer{
+        flex-direction: column;
+    }
+
+    .ProgramSearchContainer textarea{
+        width: 90%;
+        margin: 0;
+        font-size: 23px;
+    }
+
+    button{
+        width: 150px;
+        padding : 5px;
+        margin: 14px 0;
+    }
+}
+
+
+@media only screen and (min-width: 701px){
+
+    button{
+        padding: 15px;
+        margin: 0 30px;
+    }
 }

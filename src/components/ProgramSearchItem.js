@@ -1,5 +1,6 @@
 import React from "react"
 import './ProgramSearchItem.css'
+import Textarea from 'react-textarea-autosize';
 
 
 class ProgramSearchItem extends React.Component {
@@ -15,16 +16,16 @@ class ProgramSearchItem extends React.Component {
     }
 
     handleType(evt){
-        this.setState({inputvalue:evt.target.value});
+        this.setState({inputvalue:evt.target.value.trim()});
     }
 
     handleClick(){
-        this.props.handleChange(this.state.inputvalue)
+        this.props.handleProgramUrlChange(this.state.inputvalue)
     }
 
     handleEnter(e){
         if (e.keyCode === 13){
-            this.props.handleChange(this.state.inputvalue)
+            this.props.handleProgramUrlChange(this.state.inputvalue)
         }
     }
 
@@ -32,7 +33,8 @@ class ProgramSearchItem extends React.Component {
     render() {
         return (
             <div className="ProgramSearchContainer">
-                <input  onKeyDown={e => this.handleEnter(e)} onChange={evt => this.handleType(evt)} placeholder={"Input Program URL"} />
+                <Textarea  onKeyDown={e => this.handleEnter(e)} onChange={evt => this.handleType(evt)} placeholder={"Input Program URL"} >
+                </Textarea>
                 <button onClick={this.handleClick}>Get Courses</button>
             </div>
         );

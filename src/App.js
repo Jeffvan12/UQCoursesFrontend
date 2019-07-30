@@ -12,12 +12,11 @@ class App extends React.Component {
             programurl: "https://my.uq.edu.au/programs-courses/plan_display.html?acad_plan=ENGLIX2000",
         }
 
-        this.handleChange = this.handleChange.bind(this)
+        this.handleProgramUrlChange = this.handleProgramUrlChange.bind(this)
     }
 
-    handleChange(url){
+    handleProgramUrlChange(url){
         this.setState({programurl:url})
-
     }
 
 
@@ -25,7 +24,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                    <ProgramSearchItem handleChange={this.handleChange}/>
+                    <ProgramSearchItem handleProgramUrlChange={this.handleProgramUrlChange}/>
                     <CourseHolderItem programurl={this.state.programurl}/>
             </div>
         );

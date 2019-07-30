@@ -1,43 +1,48 @@
-.CourseContainer{
-    display:flex;
-    flex-direction: row;
-    /*text-align: center;*/
-    justify-content: space-between;
-    align-items: center;
-    /*margin: 30px;*/
-    /*text-align: center;*/
-    /*cursor: pointer;*/
-    margin: 7px;
-    padding: 17px;
-    /*background-color: #ff958c;*/
-    /*flex: 1;*/
-    min-height: 60px;
-    min-width: 45vw;
-    max-width: 45vw;
-    /*max-width: 16vw;*/
-    border-radius: 2.9vh;
-    /*box-shadow: 5px 5px 10px rgba(154,160,185,.6), 20px 15px 40px rgba(166,173,201,.2);*/
-
-}
-
-.CourseContainer div{
+.CourseContainer {
     display: flex;
     flex-direction: column;
-    justify-items: flex-end;
-    align-items: flex-end;
-    align-content: flex-end;
+    margin: 9px;
+    padding: 17px;
+    min-height: 60px;
+    border-radius: 2.9vh;
+    /*background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");*/
+    /*background-image: url("https://www.transparenttextures.com/patterns/dark-geometric.png");*/
+    /*background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");*/
+
 }
 
-
+.CourseContainer div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
 a {
-    /*width: 40vw;*/
-    font-size: 26px;
-    /*text-decoration: none;*/
     text-decoration-color: #5677a6;
-    color:black;
+    color: black;
 }
 
-p {
-    font-size: 20px;
-    margin: 5px;
+p { margin: 5px; }
+
+@media only screen and (max-width: 1273px) {
+    .CourseContainer { width: 40%; }
 }
+
+
+@media only screen and (max-width: 871px) {
+    .CourseContainer { flex-direction: column; }
+    p { font-size: 17px; }
+    a { font-size: 20px; }
+    .CourseContainer { width: 90%; }
+}
+
+@media only screen and (min-width: 872px) {
+    p { font-size: 20px; }
+    a { font-size: 26px; }
+}
+
+@media only screen and (min-width: 1273px) {
+    .CourseContainer { width : 29%; }
+}
+

@@ -37,12 +37,11 @@ class CourseItem extends React.Component {
            // <div onClick={()=>window.open(this.state.course.url, "_blank")} className="CourseContainer">
             <div onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="CourseContainer" style={style}>
                 <a href={this.state.course.url} >{this.state.course.title}</a>
-                {this.state.mousein ? <div><p>{this.state.course.summary}</p></div>:
                     <div>
                         <p>{"Semesters: " + this.state.course.semesters}</p>
                         <p>{"Prerequisites: " + (this.state.course.prereq === "No Value" ? "None" : this.state.course.prereq)}</p>
+                        {this.state.mousein && <p>{this.state.course.summary}</p>}
                     </div>
-                }
             </div>
         );
     }
